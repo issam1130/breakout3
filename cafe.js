@@ -26,6 +26,25 @@
     this.menu = [];
     this.order = [];
 }
+addManager(manager) {
+  this.employee.push(manager);
+  return ` ${manager.name} is now the manager for ${this.name}.`;
+}
+
+addEmployee() {
+  const manager = this.employee[0];
+
+  if (manager) {
+    manager.branchWorkers.map((worker) => this.employee.push(worker));
+    
+console.log(this.employee);
+
+    const workerDetails = `${this.employee[1].name}, ${this.employee[2].name}`
+    return `Manager: ${manager.name}, Workers: ${workerDetails}`;
+    
+  }
+  
+}
   }
 
    

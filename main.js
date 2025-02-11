@@ -83,3 +83,9 @@ console.log(manager1.branchWorkers);
 
 console.log(manager1.addWorker(worker1));
 console.log(manager1.branchWorkers);
+
+
+console.log(cafe1.addManager(manager1));
+
+console.log(cafe1.addEmployee());
+
