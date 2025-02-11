@@ -37,12 +37,7 @@ console.log(food3);
  console.log(drink3);
  
  
- 
-
-
-
-
-const worker1 = new Worker("sandy", "Cashier");
+ const worker1 = new Worker("sandy", "Cashier");
 const worker2 = new Worker("John", "Cashier");
 const worker3 = new Worker("Wick", "Cashier");
 const worker4 = new Worker("Jimmy", "barista");
