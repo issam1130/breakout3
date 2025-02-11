@@ -70,3 +70,21 @@ console.log(manager2);
 console.log(manager3);
 
 
+
+
+
+console.log(manager1.addWorker(worker1)); 
+console.log(manager1.addWorker(worker5)); 
+
+console.log(manager2.addWorker(worker2)); 
+console.log(manager2.addWorker(worker6)); 
+
+console.log(manager3.addWorker(worker3)); 
+console.log(manager3.addWorker(worker4)); 
+
+
+console.log(manager1.removeWorker("Sandy")); 
+console.log(manager1.branchWorkers); 
+
+console.log(manager1.addWorker(worker1));
+console.log(manager1.branchWorkers);
