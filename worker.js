@@ -16,6 +16,11 @@ console.log(worker1);
       this.branchId = branchId;
       this.branchWorkers = []; 
     }
+
+    addWorker(worker) {
+      this.branchWorkers.push(worker);
+      return `${worker.name} is added`;
+  }
   }
 
 
