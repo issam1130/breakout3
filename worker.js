@@ -1,4 +1,4 @@
-class Worker {
+ export class Worker {
     constructor(name, position) {
         this.name = name;
         this.position = position;
@@ -10,7 +10,7 @@ console.log(worker1);
 
 
 
-class Manager extends Worker {
+ export class Manager extends Worker {
     constructor(name, branchId) {
       super(name, "Manager"); 
       this.branchId = branchId;

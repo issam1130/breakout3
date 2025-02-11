@@ -21,7 +21,7 @@ console.log(food1); // Menu { type: 'food', name: 'Hot Sandwich', price: 12.5, i
 */
 
 
-class Menu {
+export class Menu {
     constructor(type, name, price, isWarm) {
       this.type = type;
       this.name = name;

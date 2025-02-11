@@ -16,7 +16,7 @@
 //   * an instance of `Cafe` (e.g. object `cafe1`) would look like this:
 
   
-class Cafe {
+ export class Cafe {
     constructor ( branchId, name, city, sellsFood){
     this.branchId = branchId;
     this.name = name;
