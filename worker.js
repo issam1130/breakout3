@@ -21,6 +21,13 @@ console.log(worker1);
       this.branchWorkers.push(worker);
       return `${worker.name} is added`;
   }
+
+
+  removeWorker(name) {
+    this.branchWorkers = this.branchWorkers.filter(worker => worker.name !== name);
+    const remainingWorkers = this.branchWorkers.map(worker => worker.name).join(", ") || "no workers";
+    return `${name} is removed. Current workers: ${remainingWorkers}`;
+}
   }
 
 
