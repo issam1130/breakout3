@@ -32,4 +32,3 @@ export class Menu {
   
   const food1 = new Menu("food", "Hot Sandwich", 12.5, true);
   console.log(food1)
-  
