@@ -1,23 +1,5 @@
-// ### Step 1 - class `Cafe`
-
-// - create & work in `cafe.js` file 
-// - make sure you export the class once it's done
-
-// 1.1 declare a class `Cafe`
-//   constructor with following arguments:
-//   `branchId` - number (starting from 1 later)
-//   `name`,`city` - string,
-//   `sellsFood` - boolean, (no default value given)
-//   (please don't include below three as constructor arguments)
-//   `employee` - default as empty array,
-//   `menu` - default as empty array,
-//   `order` - default as empty array
-
-//   * an instance of `Cafe` (e.g. object `cafe1`) would look like this:
-
-  
- export class Cafe {
-    constructor ( branchId, name, city, sellsFood){
+export class Cafe {
+  constructor(branchId, name, city, sellsFood) {
     this.branchId = branchId;
     this.name = name;
     this.city = city;
@@ -25,25 +7,42 @@
     this.employee = [];
     this.menu = [];
     this.order = [];
-}
   }
 
-   
-  const cafe1 = new Cafe(1, "E08 Kreuzberg", "Berlin", false)
+  addManager(manager) {
+    this.employee.push(manager);
+    return `${manager.name} is now the manager for ${this.name}.`;
+  }
 
+  addEmployee() {
+    const manager = this.employee[0];
+    if (manager) {
+      manager.branchWorkers.forEach((worker) => this.employee.push(worker));
+      const workerDetails = manager.branchWorkers.map(worker => `${worker.name} (${worker.position})`).join(", ");
+      return `Manager: ${manager.name}, Workers: ${workerDetails}`;
+    }
+  }
 
-  console.log(cafe1);
+  addMenu(menuItem) {
+    if (!this.sellsFood && menuItem.type === "food") {
+      return `${this.name} doesn't sell food.`;
+    }
+    this.menu.push(menuItem);
+    return `${menuItem.name} is added`;
+  }
 
-//   Cafe {
-//     branchId: 1,
-//     name: 'E08 Kreuzberg',
-//     city: 'Berlin',
-//     sellsFood: false,
-//     employee: [],
-//     menu: [],
-//     order: []
-//   }
+  removeMenu(menuItem) {
+    this.menu = this.menu.filter(item => item.name !== menuItem.name);
+    const currentMenu = this.menu.map(item => item.name).join(", ") || "no items available";
+    return `${menuItem.name} is removed. Current menu: ${currentMenu}`;
+  }
+}
 
+// Example Usage
+const cafe1 = new Cafe(1, "E08 Kreuzberg", "Berlin", false);
+const cafe2 = new Cafe(2, "E30 Berlin", "Berlin", false);
+const cafe3 = new Cafe(5, "E09 München", "München", true);
 
-
- 
+console.log(cafe1);
+console.log(cafe2);
+console.log(cafe3);
